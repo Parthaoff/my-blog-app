@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://my-blog-app-1-fszm.onrender.com',
+  baseURL: 'https://my-blog-app-1-fszm.onrender.com/api',
 });
 
 // This automatically adds the token to requests if we have one saved
@@ -51,3 +51,4 @@ export default API;
 // app.listen(PORT, () => {
 //   console.log(`Server running on port ${PORT}`);
 // });
+
