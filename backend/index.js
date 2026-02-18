@@ -10,6 +10,12 @@ const authRoutes = require('./routes/auth');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Allow requests from your Vercel frontend
+app.use(cors({
+  origin: ["https://my-blog-app.vercel.app", "http://localhost:5173"], // Add your specific Vercel URL here later
+  credentials: true
+}));
+
 // Middleware
 app.use(express.json()); // Allows us to parse JSON bodies
 app.use(cors()); // Allows frontend to connect
@@ -30,4 +36,5 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+
 });
